@@ -1,0 +1,23 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row  g-3">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+          <div class="col-md-12 px-0">
+            <h1 class="display-4 fst-italic"><b>Restaurant Name: </b> <%= @restaurant.name%></h1>
+            <p class="card-text"><b>Restaurant Address: </b> <br> <%= @restaurant.address%></p>
+            <p class="card-text"><b>Restaurant Category: </b> <br> <%= @restaurant.category%></p>
+            <p class="card-text"><b>Restaurant Phone number:</b> <br> <%= @restaurant.phone_number%></p>
+            <p><strong>Reviews</strong></p>
+            <ul class="list-group">
+              <% @restaurant.reviews.each do |review| %>
+                <li class="list-group-item"><%= review.content %></li>
+              <% end %>
+            </ul>
+            <br>
+            <%= link_to "Add Review",  new_restaurant_review_path(@restaurant), :class => "btn btn-sm btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

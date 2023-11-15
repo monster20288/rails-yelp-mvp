@@ -1,0 +1,24 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  <% @restaurants.each do |restaurant| %>
+    <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://img.freepik.com/free-photo/delicious-cuisine-taste-food-concept_53876-120881.jpg?w=1060&t=st=1700061380~exp=1700061980~hmac=bee72e621784d5130fe402f85b380776087ed9e4954422199083cc419dd122f8" alt="<%= restaurant.name%>">
+            <div class="card-body">
+              <p class="card-text"><b>Restaurant name: </b> <br> <%= restaurant.name%></p>
+              <p class="card-text"><b>Restaurant address: </b> <br> <%= restaurant.address%></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to "View",  restaurant_path(restaurant), :class => "btn btn-sm btn-success" %>
+                  <%# <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  <% end %>
+
+      </div>
+    </div>
+  </div>

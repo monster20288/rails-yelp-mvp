@@ -1,0 +1,16 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row  g-3">
+      <div class="col-md-6 p-md-5 mb-4 text-white rounded bg-dark">
+        <h2>Add Restaurant details</h2>
+        <%= simple_form_for(@restaurant) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :category %>
+          <%= f.input :phone_number %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
